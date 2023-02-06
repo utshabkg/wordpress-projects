@@ -1,1 +1,6 @@
 database/data
+wpprojects/wp-content/themes/flynt/.github
+wpprojects/wp-content/themes/flynt/.gitignore
+wpprojects/wp-content/themes/flynt/vendor
+wpprojects/wp-content/themes/flynt/node_modules
+wpprojects/wp-content/themes/flynt/.editorconfig

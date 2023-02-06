@@ -1,0 +1,30 @@
+.pagination {
+  margin-top: 20px;
+  overflow: auto;
+
+  .arrow {
+    color: $color-background;
+    height: 18px;
+    width: 16px;
+  }
+
+  &-previous {
+    float: left;
+
+    .arrow {
+      margin-left: -5px;
+    }
+  }
+
+  &-next {
+    float: right;
+
+    .arrow {
+      margin-right: -5px;
+    }
+  }
+
+  .button {
+    white-space: nowrap;
+  }
+}
