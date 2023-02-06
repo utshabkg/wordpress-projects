@@ -1,0 +1,19 @@
+header *,
+main *,
+footer * {
+  max-width: var(--global--spacing-measure);
+}
+
+html,
+body,
+div,
+header,
+nav,
+article,
+figure,
+hr,
+main,
+section,
+footer {
+  max-width: none;
+}/*# sourceMappingURL=measure.css.map */
