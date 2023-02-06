@@ -1,0 +1,40 @@
+version: "3.9"
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+      - ./database/data:/var/lib/mysql:cached
+      - ./database/initdb.d:/docker-entrypoint-initdb.d
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: TooR#357246!Dg
+      MYSQL_DATABASE: local_wpprojects
+      MYSQL_USER: local_wpprojects
+      MYSQL_PASSWORD: zjWG8#An<&ED
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    volumes:
+      - ./wpprojects:/var/www/html/:cached
+      - ./conf.d/php.ini:/usr/local/etc/php/conf.d/php.ini
+    restart: unless-stopped
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: local_wpprojects
+      WORDPRESS_DB_PASSWORD: zjWG8#An<&ED
+      WORDPRESS_DB_NAME: local_wpprojects
+      VIRTUAL_HOST: wpprojects.local
+    ports:
+      - "80:80"
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    restart: unless-stopped
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: TooR#357246!Dg
+      PMA_ARBITRARY: 1
+      UPLOAD_LIMIT: 300M
+    ports:
+      - "8081:80"
