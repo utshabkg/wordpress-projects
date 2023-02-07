@@ -19,7 +19,7 @@ add_filter('Flynt/addComponentData?name=GridPostsLatest', function ($data) {
         'category' => join(',', array_map(function ($taxonomy) {
             return $taxonomy->term_id;
         }, $data['taxonomies'])),
-        'posts_per_page' => ($data['options']['columns'] * $data['options']['rows']),
+        'posts_per_page' => $data['posts_per_page'],
         'ignore_sticky_posts' => 1,
         'post__not_in' => array(get_the_ID())
     ]);
@@ -66,6 +66,24 @@ function getACFLayout()
                 'return_format' => 'object'
             ],
             [
+                'label' => __('Columns', 'flynt'),
+                'name' => 'columns',
+                'type' => 'number',
+                'default_value' => 3,
+                'min' => 1,
+                'max' => 4,
+                'step' => 1
+            ],
+            [
+                'label' => __('Posts Per Page', 'flynt'),
+                'name' => 'posts_per_page',
+                'type' => 'number',
+                'default_value' => 6,
+                'min' => 1,
+                'max' => 15,
+                'step' => 1
+            ],
+            [
                 'label' => __('Options', 'flynt'),
                 'name' => 'optionsTab',
                 'type' => 'tab',
@@ -78,25 +96,7 @@ function getACFLayout()
                 'type' => 'group',
                 'layout' => 'row',
                 'sub_fields' => [
-                    FieldVariables\getTheme(),
-                    [
-                        'label' => __('Rows', 'flynt'),
-                        'name' => 'rows',
-                        'type' => 'number',
-                        'default_value' => 3,
-                        'min' => 1,
-                        'max' => 4,
-                        'step' => 1
-                    ],
-                    [
-                        'label' => __('Columns', 'flynt'),
-                        'name' => 'columns',
-                        'type' => 'number',
-                        'default_value' => 3,
-                        'min' => 1,
-                        'max' => 4,
-                        'step' => 1
-                    ]
+                    FieldVariables\getTheme()
                 ]
             ],
         ]
