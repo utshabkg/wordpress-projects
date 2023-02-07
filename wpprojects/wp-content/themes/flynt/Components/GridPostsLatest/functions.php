@@ -19,7 +19,7 @@ add_filter('Flynt/addComponentData?name=GridPostsLatest', function ($data) {
         'category' => join(',', array_map(function ($taxonomy) {
             return $taxonomy->term_id;
         }, $data['taxonomies'])),
-        'posts_per_page' => $data['options']['columns'],
+        'posts_per_page' => ($data['options']['columns'] * $data['options']['rows']),
         'ignore_sticky_posts' => 1,
         'post__not_in' => array(get_the_ID())
     ]);
@@ -79,6 +79,15 @@ function getACFLayout()
                 'layout' => 'row',
                 'sub_fields' => [
                     FieldVariables\getTheme(),
+                    [
+                        'label' => __('Rows', 'flynt'),
+                        'name' => 'rows',
+                        'type' => 'number',
+                        'default_value' => 3,
+                        'min' => 1,
+                        'max' => 4,
+                        'step' => 1
+                    ],
                     [
                         'label' => __('Columns', 'flynt'),
                         'name' => 'columns',
