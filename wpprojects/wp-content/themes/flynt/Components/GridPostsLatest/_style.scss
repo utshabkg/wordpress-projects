@@ -45,24 +45,28 @@
 
     .img__description_layer {
       position: absolute;
-      top: 0;
       bottom: 0;
-      left: 0;
+      left: 100%;
       right: 0;
-      background: #fff;
-      visibility: hidden;
-      opacity: 0;
+      background: rgba(255, 255, 255, 0.6);
       display: flex;
-      align-items: center;
-      justify-content: center;
+      overflow: hidden;
+      width: 0;
+      height: 100%;
+      transition: .5s ease;
 
-      /* transition effect. not necessary */
-      transition: opacity .2s, visibility .2s;
+      .hoverText {
+        align-items: center;
+        justify-content: center;
+        top: 50%;
+        left: 50%;
+      }
     }
 
     &:hover .img__description_layer {
-      visibility: visible;
-      opacity: 1;
+      width: 60%;
+      left: 0;
+      margin: 0px 0px 0px auto;
     }
 
     &-image {
@@ -88,11 +92,11 @@
     }
 
     &-readingTime {
-      color: #7b838d;
+      color: #000;
       font-size: 0.9rem;
 
       .feather {
-        color: #7b838d;
+        color: #000;
         height: 1rem;
         margin-right: 2px;
         width: 1rem;
@@ -108,7 +112,7 @@
       padding: 0 20px;
       width: 100%;
 
-      .content-readMore {
+      .img__wrap-readMore {
         padding: 0.9rem 0 1.1rem;
 
         &::before {
