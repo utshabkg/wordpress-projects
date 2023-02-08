@@ -75,7 +75,7 @@ function getACFLayout()
                 'step' => 1
             ],
             [
-                'label' => __('Posts Per Page', 'flynt'),
+                'label' => __('View Posts', 'flynt'),
                 'name' => 'posts_per_page',
                 'type' => 'number',
                 'default_value' => 6,
