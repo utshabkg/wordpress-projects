@@ -71,7 +71,7 @@ function getACFLayout()
                 'type' => 'number',
                 'default_value' => 3,
                 'min' => 1,
-                'max' => 4,
+                'max' => 5,
                 'step' => 1
             ],
             [
