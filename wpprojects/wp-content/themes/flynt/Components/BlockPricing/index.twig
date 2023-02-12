@@ -1,0 +1,134 @@
+<div class="flyntComponent componentSpacing {{ options.theme }} {{ section.class }} {% if section.hidden %}hidden{% endif %}" id="{{ section.id }}" is="flynt-block-pricing">
+
+	<script type="application/json">{{ jsonData|json_encode }}</script>
+
+	<section class="content">
+		<div class="container">
+			<div class="row-fluid clearfix">
+				<div class="pricing-wrapper comparison-table clearfix style-3">
+
+					<div class="col-md-3 pricing-col list-feature">
+						<div class="pricing-card">
+							<div class="pricing-header">
+								<h5>{{ preContentHtml }}</h5>
+								<p>Compare Package Feature</p>
+							</div>
+							<div class="pricing-feature">
+								<li>
+									<p>monthly updates</p>
+								</li>
+								<li>
+									<p>disk Space</p>
+								</li>
+								<li>
+									<p>email Accounts</p>
+								</li>
+								<li>
+									<p>Domains</p>
+								</li>
+								<li>
+									<p>Sub Domains</p>
+								</li>
+								<li>
+									<p>Custom Domains</p>
+								</li>
+								<li>
+									<p>Technical Support</p>
+								</li>
+								<li>
+									<p>Monthly Bandwidth</p>
+								</li>
+							</div>
+						</div>
+					</div>
+
+					{% if Pricings %}
+						{% for pricing in Pricings %}
+							<div class="col-md-3 pricing-col person">
+								<div class="pricing-card">
+									<div class="pricing-header">
+										<h5>{{ pricing.package }}</h5>
+										<div class="price-box">
+											<div class="price">{{ pricing.price }}
+												<div class="currency">$</div>
+												<div class="plan">/ Mo</div>
+											</div>
+										</div>
+									</div>
+									<div class="pricing-feature">
+										<li>
+											<p>
+												{% if pricing.monthly_updates %}
+													<i class="fa fa-check">
+													{% else %}
+														<i class="fa fa-times">
+														{% endif %}
+													</i>
+												</p>
+											</p>
+										</li>
+										<li>
+											<p>
+												<span>{{ pricing.disk_space }}</span>
+											</p>
+										</li>
+										<li>
+											<p>
+												<span>{{ pricing.email_accounts }}</span>
+											</p>
+										</li>
+										<li>
+											<p>
+												<span>{{ pricing.domains }}</span>
+											</p>
+										</li>
+										<li>
+											<p>
+												<span>{{ pricing.sub_domains }}</span>
+											</p>
+										</li>
+										<li>
+											<p>
+												{% if pricing.custom_domains %}
+													<i class="fa fa-check">
+													{% else %}
+														<i class="fa fa-times">
+														{% endif %}
+													</i>
+												</p>
+											</p>
+										</li>
+										<li>
+											<p>
+												{% if pricing.technical_support %}
+													<i class="fa fa-check">
+													{% else %}
+														<i class="fa fa-times">
+														{% endif %}
+													</i>
+												</p>
+											</p>
+										</li>
+										<li>
+											<p>
+												<span>{{ pricing.monthly_bandwidth }}</span>
+											</p>
+										</li>
+									</div>
+									<div class="pricing-footer">
+										<a href="#" class="btn btn-act rounded btn-line">
+											<span>Order Now</span>
+											<i class="fa fa-arrow-right"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+						{% endfor %}
+					{% endif %}
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+</div>
