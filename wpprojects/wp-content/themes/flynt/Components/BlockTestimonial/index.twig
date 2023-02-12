@@ -1,0 +1,76 @@
+<div class="flyntComponent componentSpacing {{ options.theme }} {{ section.class }} {% if section.hidden %}hidden{% endif %}" id="{{ section.id }}" is="flynt-slider-testimonial">
+
+	<script type="application/json">{{ jsonData|json_encode }}</script>
+
+	<div class="container centerMaxWidthContainer">
+
+		<div class="section-title">
+			<div class="lines">
+				<span data-aos="animate" data-aos-delay="100" style="background-color:{{slash_color}}"></span>
+				<span data-aos="animate" data-aos-delay="200" style="background-color:{{slash_color}}"></span>
+			</div>
+			{% if title %}
+				<h2 data-aos="animate" class="white" data-aos="fade-in">{{ title }}</h2>
+			{% endif %}
+			{% if contentHtml %}
+				<div class="content">{{ contentHtml }}</div>
+			{% endif %}
+		</div>
+		
+
+		<div data-slider="data-slider" class="swiper swiper-container testimonialSlider">
+
+			<div class="swiper-wrapper">
+
+				{% if Testimonials %}
+					{% for testimonial in Testimonials %}
+
+						<div class="swiper-item swiper-slide">
+							<div class="testimonial container">
+								<div class="author-image-wrap">
+									<img class="author-image" src="https://ik.imagekit.io/demo/img/plant.jpeg" width="512" height="720" alt="author">
+								</div>
+								<div class="container">
+									<div class="testimonial-text">
+
+										<div class="testimonial-quote group">
+											<div class="quote-container">
+												<blockquote>
+													{{ testimonial.contentHtml }}
+												</blockquote>
+											</div>
+										</div>
+
+									</div>
+
+									<div class="author-wrap">
+
+										<div class="author-info-wrap">
+											<div class="author-info">
+												<span>{{ testimonial.author }}</span>
+											</div>
+
+											<div class="author-company">
+												<span>{{ testimonial.company }}</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					{% endfor %}
+				{% endif %}
+
+			</div>
+
+			<div class="swiper-navigation">
+				<button data-slider-button="prev" class="swiper-button sb-prev"></button>
+				<div class="s-pagination"></div>
+				<button data-slider-button="next" class="swiper-button sb-next"></button>
+			</div>
+
+		</div>
+	</div>
+
+</div>

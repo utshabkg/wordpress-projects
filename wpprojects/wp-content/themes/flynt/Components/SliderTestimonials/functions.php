@@ -1,11 +1,11 @@
 <?php
 
-namespace Flynt\Components\SliderImagesCustom;
+namespace Flynt\Components\SliderTestimonials;
 
 use Flynt\FieldVariables;
 use Flynt\Utils\Options;
 
-add_filter('Flynt/addComponentData?name=SliderImagesCustom', function ($data) {
+add_filter('Flynt/addComponentData?name=SliderTestimonials', function ($data) {
     $translatableOptions = Options::getTranslatable('SliderOptions');
     $data['jsonData'] = [
         'options' => array_merge($translatableOptions, $data['options']),
@@ -16,8 +16,8 @@ add_filter('Flynt/addComponentData?name=SliderImagesCustom', function ($data) {
 function getACFLayout()
 {
     return [
-        'name' => 'SliderImagesCustom',
-        'label' => 'Slider: Images',
+        'name' => 'SliderTestimonials',
+        'label' => 'Slider: Testimonials',
         'sub_fields' => [
             [
                 'label' => __('General', 'flynt'),

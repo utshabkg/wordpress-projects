@@ -1,0 +1,258 @@
+[is='flynt-slider-testimonial'] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .centerMaxWidthContainer {
+        position: relative;
+        width: 100%;
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+
+            .swiper-wrapper {
+                width: 100%;
+
+                .swiper-item {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+
+                    width: 50% !important;
+                    max-width: 100%;
+                    height: auto;
+
+                    //@include MQ(tabletPortrait) {
+                    //    max-width: 50%;
+                    //}
+
+                    .testimonial {
+                        position: relative;
+                        align-self: center;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        width: 100%;
+                        height: 100%;
+                        max-width: 95%;
+                        margin: 0 auto;
+                        // padding: 40px;
+
+                        @include MQ(tabletPortrait) {
+                            flex-direction: row;
+                        }
+
+                        .author-image-wrap {
+                            width: 25%;
+                            max-width: 100%;
+
+                            img.author-image {
+                                display: block;
+                                border-radius: 0 0 0 80px;
+                                width: 250px;
+                                height: 250px;
+                            }
+                        }
+
+                        .container {
+                            width: 70%;
+                            background-color: #E5FDD1;
+                            padding: 40px 20px 10px 40px;
+
+                            .testimonial-text {
+
+                                .testimonial-quote {
+                                    position: relative;
+
+                                    blockquote {
+                                        /* Negate theme styles */
+                                        border: 0;
+                                        margin: 0;
+                                        padding: 0;
+
+                                        line-height: 1.4 !important;
+                                        margin: 0;
+                                        position: relative;
+                                        text-shadow: 0 1px white;
+                                        z-index: 600;
+
+                                        p {
+                                            color: #75808a;
+                                            font-size: 14px;
+                                            font-style: italic;
+                                            text-align: left;
+
+                                            &:first-child:before {
+                                                content: '\201C';
+                                                color: #81bedb;
+                                                font-size: 7.5em;
+                                                font-weight: 700;
+                                                opacity: .3;
+                                                position: absolute;
+                                                top: -.4em;
+                                                left: -.2em;
+                                                text-shadow: none;
+                                                z-index: -300;
+                                                // background-color: green;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .author-wrap {
+                            display: flex;
+                            justify-content: flex-end;
+                            width: 100%;
+                            height: auto;
+
+                            .author-info-wrap,
+                            .author-image-wrap {
+                                display: flex;
+                                justify-content: flex-end;
+                                width: 100%;
+                                max-width: 100%;
+                                position: absolute;
+                                bottom: 40px;
+
+                                @include MQ(tabletPortrait) {
+                                    max-width: 50%;
+                                }
+
+                                img {
+                                    margin: 0 auto 20px auto;
+                                    align-self: flex-end;
+                                    border-radius: 100%;
+                                    overflow: hidden;
+                                    display: block;
+                                    width: 90px;
+                                    height: 90px;
+
+                                    @include MQ(tabletPortrait) {
+                                        margin: 0 40px 0 0;
+                                    }
+                                }
+
+                                .author-info,
+                                .author-company {
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: flex-end;
+                                    width: auto;
+
+                                    span {
+                                        display: block;
+                                        font-size: 16px;
+                                        font-weight: bold;
+                                        text-align: center;
+
+                                        @include MQ(tabletPortrait) {
+                                            display: inline-block;
+                                            text-align: right;
+                                        }
+                                    }
+                                }
+
+                                .author-company {
+                                    span {
+                                        font-weight: 400;
+                                        color: #A3BB98;
+                                        padding-left: 20px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .swiper-slide-next {
+                    // width: 600px;
+                    // font-size: 36px;
+                    opacity: 0.5;
+                }
+                // .swiper-slide-duplicate-prev {
+                //     padding-left: 100px;
+                // }
+                // .swiper-slide-next {
+                //     padding-left: 100px;
+                // }
+
+                // .swiper-slide-next,
+                // .swiper-slide-prev {
+                    // width: 150px;
+                    // font-size: 9px;
+                // }
+            }
+
+            .swiper-navigation {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                width: 100%;
+                height: auto;
+                padding: 40px 20px;
+
+                .s-pagination {
+                    display: inline-flex;
+                    flex-direction: row;
+                    justify-content: center;
+
+                    width: auto;
+                    height: auto;
+                    padding: 0 20px;
+
+                    .swiper-pagination-bullet {
+                        background-color: $color-green;
+                        border: 1px solid $color-green;
+                        width: 15px;
+                        height: 15px;
+                        margin: 16px 10px;
+                        transform: scale(1);
+                        opacity: 1;
+
+                        transition: background-color .5s ease 0s,
+                            transform .5s ease 0s;
+                        will-change: background-color, transform;
+
+                        &.swiper-pagination-bullet-active {
+                            background-color: $color-dark-green;
+                            transform: scale(1);
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                .sb-next,
+                .sb-prev {
+                    cursor: pointer;
+
+                    position: relative;
+
+                    display: inline-flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    background-image: url('icons/arrow-left.svg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 16px;
+
+                    width: 50px;
+                    height: 50px;
+
+                    transition: opacity .5s ease 0s,
+                        transform .5s ease 0s;
+                    will-change: opacity, transform;
+
+                    margin: 0 5px;
+                }
+
+                .sb-prev {
+                    background-image: url('icons/arrow-right.svg');
+                }
+            }
+
+        }
+    }
+}
