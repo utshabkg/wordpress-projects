@@ -27,6 +27,7 @@
     "@babel/plugin-transform-runtime": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
     "@babel/runtime": "^7.12.1",
+    "@fortawesome/fontawesome-free": "^6.3.0",
     "ansi-colors": "^4.1.1",
     "autoprefixer": "^9.8.6",
     "babel-eslint": "^10.1.0",
@@ -58,7 +59,7 @@
     "gulp-rev-napkin": "^0.1.0",
     "gulp-rev-rewrite": "^3.0.3",
     "intersection-observer": "^0.11.0",
-    "jquery": "^3.5.1",
+    "jquery": "^3.6.3",
     "js-cookie": "^2.2.1",
     "lazysizes": "^5.2.2",
     "lodash": "^4.17.20",
@@ -163,7 +164,16 @@
       }
     ]
   },
-  "dependencies": {},
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "aos": "^2.3.4",
+    "imagesloaded": "^5.0.0",
+    "infinite-scroll": "^4.0.1",
+    "isotope-layout": "^3.0.6",
+    "jquery-bridget": "^3.0.1",
+    "masonry-layout": "^4.2.2"
+  },
   "browserslist": [
     "> 1%",
     "last 2 versions",
