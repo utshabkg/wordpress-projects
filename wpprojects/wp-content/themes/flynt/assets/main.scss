@@ -1,4 +1,6 @@
 @import 'easings-css/easings';
+@import 'aos/dist/aos.css';
+@import '~@fortawesome/fontawesome-free/css/all.css';
 
 @import
   'styles/variables',
@@ -9,3 +11,22 @@
 @import '../Components/**/_style.scss';
 
 @import 'styles/print';
+
+//.sticky-offset {
+//  height: 130px !important;
+//  transition: all 1s linear;
+//
+//  &.navbarOffsetMargin {
+//    height: 90px !important;
+//  }
+//}
+
+.admin-bar .sticky {
+  top: 32px !important;
+}
+
+@media screen and (max-width: 782px) {
+  .admin-bar .sticky {
+    top: 46px;
+  }
+}

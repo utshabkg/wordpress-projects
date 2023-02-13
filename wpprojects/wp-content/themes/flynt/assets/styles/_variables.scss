@@ -4,6 +4,15 @@ $breakpoint-tablet-horizontal: 1024px;
 $breakpoint-desktop: 1280px;
 $breakpoint-desktop-wide: 1440px;
 
+// BREAK POINTS
+$mobilePortrait: 375px;
+$mobileLandscape: $breakpoint-mobile-horizontal;
+$tabletSmall: 640px;
+$tabletPortrait: $breakpoint-tablet;
+$tabletLandscape: $breakpoint-tablet-horizontal;
+$desktop: $breakpoint-desktop;
+$siteWidth: $breakpoint-desktop-wide;
+
 $container-max-width: 1440px;
 $container-padding-desktop: 60px;
 $container-padding-tablet: 40px;
@@ -14,17 +23,32 @@ $component-spacing-tablet: 80px;
 $component-spacing-mobile: 40px;
 $gutter-width: 24px;
 
-$color-brand: #0d8eff;
-$color-accent: #f96417;
-$color-background: #fff;
-$color-contrast: #414751;
+
+
+$sea-blue: #45A2A9;
+$emerald: #40bc6d;
+$citrus: #F9D342;
+$peach: #EDE8E2;
+$off-black: #294A51;
+$color-black: #000;
+$color-white: #FFF;
+$color-gray: #414751;
+$color-green: #329B87;
+$color-dark-green: #0E6657;
+
+$color-brand: $emerald;
+$color-accent: $citrus;
+$color-background: $color-white;
+$color-contrast: $color-gray;
 $color-text: $color-contrast;
-$color-headline: #0b1016;
-$color-border: #d8d8d8;
+$color-headline: $off-black;
+$color-border: $off-black;
 
 $color-background-light: #f2f6fe;
-$color-background-dark: #091a41;
+$color-background-dark: $off-black;
 $color-background-hero: $color-brand;
+
+$banner-bg-rgb: rgba(69, 162, 169, 0.6);
 
 $heading-selectors: 'h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6';
 $input-selectors: '[type="tel"], [type="url"], [type="text"], [type="date"], [type="email"], [type="search"], [type="number"], [type="password"], textarea, select';

@@ -5,52 +5,52 @@ import 'swiper/swiper-bundle.css'
 
 Swiper.use([Navigation, Pagination, A11y, Autoplay])
 
-// var swiper = new Swiper(".testimonialSlider", {
-//   allowTouchMove: true,
+var swiper = new Swiper(".testimonialSlider", {
+  allowTouchMove: true,
 
-//   navigation: {
-//     nextEl: ".sb-next",
-//     prevEl: ".sb-prev",
-//   },
+  navigation: {
+    nextEl: ".sb-next",
+    prevEl: ".sb-prev",
+  },
 
-//   pagination: {
-//     el: ".s-pagination",
-//     clickable: true
-//   },
+  pagination: {
+    el: ".s-pagination",
+    clickable: true
+  },
 
-//   mousewheel: true,
-//   keyboard: true,
-// });
+  mousewheel: true,
+  keyboard: true,
+});
 
 class TestimonialSlider extends window.HTMLDivElement {
-  constructor(...args) {
+  constructor (...args) {
     const self = super(...args)
     self.init()
     return self
   }
 
-  init() {
+  init () {
     this.$ = $(this)
     this.props = this.getInitialProps()
     this.resolveElements()
   }
 
-  getInitialProps() {
+  getInitialProps () {
     let data = {}
     try {
       data = JSON.parse($('script[type="application/json"]', this).text())
-    } catch (e) { }
+    } catch (e) {}
     return data
   }
 
-  resolveElements() {
+  resolveElements () {
     this.$slider = $('[data-slider]', this)
     this.$buttonNext = $('[data-slider-button="next"]', this)
     this.$buttonPrev = $('[data-slider-button="prev"]', this)
     this.$pagination = $('[data-slider-pagination]', this)
   }
 
-  connectedCallback() {
+  connectedCallback () {
     this.initSlider()
   }
 
@@ -58,29 +58,25 @@ class TestimonialSlider extends window.HTMLDivElement {
     const { options } = this.props
     const config = {
       a11y: options.a11y,
-      centeredSlides: false,
       loop: true,
-      lazyloading: true,
-      initialSlide: 1,
+      centeredSlides: true,
       navigation: {
         nextEl: this.$buttonNext.get(0),
         prevEl: this.$buttonPrev.get(0)
       },
-      slidesPerView: 3,
+      slidesPerView: 1,
       spaceBetween: 0,
-      // breakpoints: {
-      //   1024: {
-      //     slidesPerView: 3,
-      //     spaceBetween: 30,
-      //   }
-      // },
+      breakpoints: {
+        1024: {
+          slidesPerView: 2,
+          spaceBetween: 30
+        }
+      },
       pagination: {
-        el: '.s-pagination',
-        // type: 'fraction',
+        el: ".s-pagination",
         clickable: true,
       },
       autoplay: true,
-      disableOnInteraction: true,
     }
 
     if (options.autoplay && options.autoplaySpeed) {
@@ -89,7 +85,7 @@ class TestimonialSlider extends window.HTMLDivElement {
       }
     }
 
-    this.slider = new Swiper(this.$slider.get(0), config)
+    this.slider = new Swiper( this.$slider.get(0), config )
   }
 }
 

@@ -14,10 +14,10 @@
     font-style: unquote($style);
     font-weight: unquote($weight);
     @if $woff2 {
-      src: url($base-path+$file+'.woff2') format('woff2'),
-        url($base-path+$file+'.woff') format('woff');
+      src: url($base-path+$file + '.woff2') format('woff2'),
+        url($base-path+$file + '.woff') format('woff');
     } @else {
-      src: url($base-path+$file+'.woff') format('woff');
+      src: url($base-path+$file + '.woff') format('woff');
     }
   }
 }
@@ -105,6 +105,68 @@
     &:nth-child(n) {
       margin-right: 0;
       margin-top: 0;
+    }
+  }
+}
+
+@mixin invert-color {
+  > * {
+    color: $color-white;
+
+    #{$heading-selectors} {
+      color: $color-white;
+    }
+
+    a {
+      color: $color-white;
+      hover: {
+        color: $color-accent;
+      }
+    }
+  }
+}
+
+// MEDIA QUERIES
+@mixin MQ($canvas) {
+  @if $canvas==mobilePortrait {
+    @media only screen and (min-width: $mobilePortrait) {
+      @content;
+    }
+  }
+
+  @if $canvas==mobileLandscape {
+    @media only screen and (min-width: $mobileLandscape) {
+      @content;
+    }
+  }
+
+  @if $canvas==tabletSmall {
+    @media only screen and (min-width: $tabletSmall) {
+      @content;
+    }
+  }
+
+  @if $canvas==tabletPortrait {
+    @media only screen and (min-width: $tabletPortrait) {
+      @content;
+    }
+  }
+
+  @if $canvas==tabletLandscape {
+    @media only screen and (min-width: $tabletLandscape) {
+      @content;
+    }
+  }
+
+  @else if $canvas==desktop {
+    @media only screen and (min-width: $desktop) {
+      @content;
+    }
+  }
+
+  @else if $canvas==siteWidth {
+    @media only screen and (min-width: $siteWidth) {
+      @content;
     }
   }
 }
