@@ -30,14 +30,14 @@
                 justify-content: start;
 
                 .icons {
-                    position: absolute !important;
-                    top: 40px !important;
-                    right: 10px !important;
-                    color: gold !important;
+                    position: absolute;
+                    top: 40px;
+                    right: 10px;
+                    color: gold;
                     display: flex;
                     flex-direction: column;
 
-                    .fab{
+                    .fab {
                         padding: 5px 0;
                     }
                 }
@@ -53,12 +53,11 @@
                     z-index: 5;
 
                     img {
-                        transform: all 0.10s;
                         width: 100%;
                         border-bottom-left-radius: 80px;
 
                         &:hover {
-                            transform: all 0.10s;
+                            transform: all 0.10s linear;
                             position: relative;
                             top: 0px;
                             left: -40px;

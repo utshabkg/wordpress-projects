@@ -21,16 +21,17 @@
 								<div class="image">
 									<img class="" src="{{ item.thumbnail.src }}" alt="author">
 								</div>
-								<div
-									class="icons">
-									{# <img class="icon-twitter" src="../../assets/icons/twitter.png" alt="twitter icon">
-																																																															<img class="icon-linkedin" src="../../assets/icons/twitter.png" alt="linkedin icon"> #}
-									<i class="fab fa-twitter"></i>
-									<i class="fab fa-linkedin"></i>
+								<div class="icons">
+									<a href="{{ item.twitter }}">
+										<i class="fab fa-twitter"></i>
+									</a>
+									<a href="{{ item.linkedin }}">
+										<i class="fab fa-linkedin"></i>
+									</a>
 								</div>
 								<div class="info">
 									<h5 class="name">{{ item.title }}</h5>
-									<span class="job">{{ item.content }}</span>
+									<span class="job">{{ item.company }}</span>
 								</div>
 							</div>
 						</div>
