@@ -20,12 +20,31 @@ add_action('Flynt/afterRegisterComponents', function () {
                 'label' => __('Designation', 'flynt'),
                 'name' => 'designation',
                 'type' => 'text',
+                // 'visible' => ['office_worker', '==', 1],
+                'conditional_logic' => [
+                    [
+                        [
+                            'fieldPath' => 'office_worker',
+                            'operator' => '==',
+                            'value' => 1
+                        ]
+                    ]
+                ],
             ],
             [
                 'label' => __('Company', 'flynt'),
                 'name' => 'company',
                 'type' => 'text',
                 'required' => 0,
+                'conditional_logic' => [
+                    [
+                        [
+                            'fieldPath' => 'office_worker',
+                            'operator' => '==',
+                            'value' => 1
+                        ]
+                    ]
+                ],
             ],
             [
                 'label' => __('Twitter', 'flynt'),
@@ -50,4 +69,28 @@ add_action('Flynt/afterRegisterComponents', function () {
             ]
         ]
     ]);
+});
+
+add_filter('rwmb_meta_boxes', function ($meta_boxes) {
+    $meta_boxes[] = [
+        'fields' => [
+            [
+                'label' => __('Office Worker', 'flynt'),
+                'name' => 'office_worker',
+                'type' => 'true_false',
+                'default_value' => 0,
+                'ui' => 1
+            ],
+            [
+
+                'label' => __('Designation', 'flynt'),
+                'name' => 'designation',
+                'type' => 'text',
+                'visible' => ['office_worker', '==', 1],
+
+            ],
+        ],
+    ];
+
+    return $meta_boxes;
 });
