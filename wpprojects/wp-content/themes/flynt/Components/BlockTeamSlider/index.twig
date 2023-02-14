@@ -1,0 +1,51 @@
+<div class="flyntComponent componentSpacing {{ options.theme }} {{ section.class }} {% if section.hidden %}hidden{% endif %}" id="{{ section.id }}" is="flynt-team-slider">
+
+	<script type="application/json">{{ jsonData|json_encode }}</script>
+
+	<div class="container centerMaxWidthContainer">
+
+		<div class="section-title">
+			<div class="lines">
+				<span data-aos="animate" data-aos-delay="100" style="background-color:{{slash_color}}"></span>
+				<span data-aos="animate" data-aos-delay="200" style="background-color:{{slash_color}}"></span>
+			</div>
+			{% if title %}
+				<h2 data-aos="animate" class="white" data-aos="fade-in">{{ title }}</h2>
+			{% endif %}
+			{% if contentHtml %}
+				<div class="content">{{ contentHtml }}</div>
+			{% endif %}
+		</div>
+	</div>
+	<div class="centerMaxWidthContainer">
+		<div data-slider="data-slider" class="swiper">
+			<div class="swiper-wrapper">
+				{% if Teams %}
+					{% for team in Teams %}
+						<div class="swiper-slide">
+							<div class="author-image-wrap">
+								<img class="author-image" src="{{ team.image }}" alt="author">
+							</div>
+							<div class="content">
+								<div class="author-info">
+									<div class="name">{{ team.author }}</div>
+									<div class="job">{{ team.company }}</div>
+								</div>
+							</div>
+						</div>
+
+					{% endfor %}
+				{% endif %}
+			</div>
+			<div class="swiper-navigation">
+				<button data-slider-button="prev" class="swiper-button sb-prev"></button>
+				<div class="s-pagination"></div>
+				<button data-slider-button="next" class="swiper-button sb-next"></button>
+			</div>
+
+		</div>
+	</div>
+	{# end title #}
+
+
+</div>

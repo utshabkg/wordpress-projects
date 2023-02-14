@@ -27,6 +27,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                     Components\GridImageHoverText\getACFLayout(),
                     Components\BlockTestimonial\getACFLayout(),
                     Components\BlockPricing\getACFLayout(),
+                    Components\BlockTeamSlider\getACFLayout(),
                 ]
             ]
         ],

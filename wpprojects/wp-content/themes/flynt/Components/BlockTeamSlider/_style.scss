@@ -1,0 +1,122 @@
+[is='flynt-team-slider'] {
+
+
+    .swiper {
+
+        .swiper-slide {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background-color: $color-white;
+            box-shadow: 0px 0px 15px $peach;
+            border-bottom-left-radius: 80px 80px;
+            width: 25%;
+
+            .author-image-wrap {
+                width: 30%;
+                max-width: 100%;
+
+                img.author-image {
+                    display: block;
+                    border-bottom-left-radius: 80px 80px;
+                }
+            }
+
+            .content {
+                width: 66%;
+                padding: 2%;
+
+                p {
+                    font-size: 14px;
+                }
+
+            }
+
+            .author-info {
+                display: flex;
+                justify-content: flex-end;
+                flex-direction: row;
+                align-items: start;
+
+                .name {
+                    font-weight: bold;
+                    color: $color-black;
+                    padding-right: 5px;
+                }
+
+                .job {
+                    color: $color-gray;
+                }
+            }
+        }
+
+
+        .swiper-navigation {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+            height: auto;
+            padding: 40px 20px;
+
+            .s-pagination {
+                display: inline-flex;
+                flex-direction: row;
+                justify-content: center;
+
+                width: auto;
+                height: auto;
+                padding: 0 20px;
+
+                .swiper-pagination-bullet {
+                    background-color: $color-green;
+                    border: 1px solid $color-green;
+                    width: 15px;
+                    height: 15px;
+                    margin: 16px 10px;
+                    transform: scale(1);
+                    opacity: 1;
+
+                    transition: background-color .5s ease 0s,
+                        transform .5s ease 0s;
+                    will-change: background-color, transform;
+
+                    &.swiper-pagination-bullet-active {
+                        background-color: $color-dark-green;
+                        transform: scale(1);
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .sb-next,
+            .sb-prev {
+                cursor: pointer;
+
+                position: relative;
+
+                display: inline-flex;
+                flex-direction: column;
+                justify-content: center;
+                background-image: url('icons/arrow-left.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 16px;
+
+                width: 50px;
+                height: 50px;
+
+                transition: opacity .5s ease 0s,
+                    transform .5s ease 0s;
+                will-change: opacity, transform;
+
+                margin: 0 5px;
+            }
+
+            .sb-prev {
+                background-image: url('icons/arrow-right.svg');
+            }
+        }
+    }
+}
