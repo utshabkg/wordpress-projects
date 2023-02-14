@@ -5,10 +5,6 @@
 	<div class="container centerMaxWidthContainer">
 
 		<div class="section-title">
-			<div class="lines">
-				<span data-aos="animate" data-aos-delay="100" style="background-color:{{slash_color}}"></span>
-				<span data-aos="animate" data-aos-delay="200" style="background-color:{{slash_color}}"></span>
-			</div>
 			{% if title %}
 				<h2 data-aos="animate" class="white" data-aos="fade-in">{{ title }}</h2>
 			{% endif %}
@@ -16,24 +12,28 @@
 				<div class="content">{{ contentHtml }}</div>
 			{% endif %}
 		</div>
-	</div>
-	<div class="centerMaxWidthContainer">
 		<div data-slider="data-slider" class="swiper">
 			<div class="swiper-wrapper">
-				{% if Teams %}
-					{% for team in Teams %}
+				{% if relationship %}
+					{% for item in relationship %}
 						<div class="swiper-slide">
-							<div class="author-image-wrap">
-								<img class="author-image" src="{{ team.image }}" alt="author">
-							</div>
-							<div class="content">
-								<div class="author-info">
-									<div class="name">{{ team.author }}</div>
-									<div class="job">{{ team.company }}</div>
+							<div class="author-wrap">
+								<div class="image">
+									<img class="" src="{{ item.thumbnail.src }}" alt="author">
+								</div>
+								<div
+									class="icons">
+									{# <img class="icon-twitter" src="../../assets/icons/twitter.png" alt="twitter icon">
+																																																															<img class="icon-linkedin" src="../../assets/icons/twitter.png" alt="linkedin icon"> #}
+									<i class="fab fa-twitter"></i>
+									<i class="fab fa-linkedin"></i>
+								</div>
+								<div class="info">
+									<h5 class="name">{{ item.title }}</h5>
+									<span class="job">{{ item.content }}</span>
 								</div>
 							</div>
 						</div>
-
 					{% endfor %}
 				{% endif %}
 			</div>
@@ -45,7 +45,5 @@
 
 		</div>
 	</div>
-	{# end title #}
-
 
 </div>

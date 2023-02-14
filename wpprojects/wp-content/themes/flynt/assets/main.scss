@@ -1,11 +1,11 @@
 @import 'easings-css/easings';
 @import 'aos/dist/aos.css';
 @import '~@fortawesome/fontawesome-free/css/all.css';
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css');
 
-@import
-  'styles/variables',
-  'styles/mixins',
-  'styles/base';
+@import 'styles/variables',
+'styles/mixins',
+'styles/base';
 
 // stylelint-disable-next-line scss/at-import-no-partial-leading-underscore, scss/at-import-partial-extension-blacklist
 @import '../Components/**/_style.scss';

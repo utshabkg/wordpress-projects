@@ -47,34 +47,6 @@ function getACFLayout()
                 'delay' => 1,
             ],
             [
-                'label' => __('Teams', 'flynt'),
-                'name' => 'Teams',
-                'type' => 'repeater',
-                'min' => 1,
-                'layout' => 'row',
-                'button_label' => __('Add Teams', 'flynt'),
-                'sub_fields' => [
-                    [
-                        [
-                            'label' => __('Author Image', 'flynt'),
-                            'name' => 'image',
-                            'type' => 'image',
-                            'instructions' => 'Ratio: 90x90',
-                        ],
-                        [
-                            'label' => __('Author', 'flynt'),
-                            'name' => 'author',
-                            'type' => 'text',
-                        ],
-                        [
-                            'label' => __('Company Name', 'flynt'),
-                            'name' => 'company',
-                            'type' => 'text',
-                        ],
-                    ],
-                ],
-            ],
-            [
                 'label' => __('Relationship', 'flynt'),
                 'name' => 'relationship',
                 'type' => 'relationship',

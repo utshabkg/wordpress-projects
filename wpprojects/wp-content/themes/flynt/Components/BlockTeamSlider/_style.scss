@@ -1,54 +1,91 @@
 [is='flynt-team-slider'] {
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     .swiper {
+        width: 90%;
+        height: auto;
+        padding: 10vh 0;
+        overflow: hidden;
+
+        .swiper-wrapper {
+            transform: translate3d(0px, 0px, 0px);
+        }
 
         .swiper-slide {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            align-items: center;
-            background-color: $color-white;
+            align-items: stretch;
+            background-color: $off-black;
             box-shadow: 0px 0px 15px $peach;
-            border-bottom-left-radius: 80px 80px;
-            width: 25%;
+            height: auto;
 
-            .author-image-wrap {
-                width: 30%;
-                max-width: 100%;
+            .author-wrap {
+                width: 100%;
+                padding: 35px 0px;
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
 
-                img.author-image {
+                .icons {
+                    position: absolute !important;
+                    top: 40px !important;
+                    right: 10px !important;
+                    color: gold !important;
+                    display: flex;
+                    flex-direction: column;
+
+                    .fab{
+                        padding: 5px 0;
+                    }
+                }
+
+                .image {
                     display: block;
                     border-bottom-left-radius: 80px 80px;
+                    position: relative;
+                    min-height: 300px;
+                    top: 0px;
+                    left: 0px;
+                    transform: all 0.10s;
+                    z-index: 5;
+
+                    img {
+                        transform: all 0.10s;
+                        width: 100%;
+                        border-bottom-left-radius: 80px;
+
+                        &:hover {
+                            transform: all 0.10s;
+                            position: relative;
+                            top: 0px;
+                            left: -40px;
+                        }
+                    }
+                }
+
+                .info {
+                    display: block;
+                    color: $citrus;
+                    padding: 0px 10px;
+                    padding-top: 20px;
+
+                    .name {
+                        font-weight: bold;
+                        color: $citrus;
+                        padding-right: 5px;
+                        margin-bottom: 0;
+                    }
+
+                    .job {
+                        color: $citrus;
+                    }
                 }
             }
 
-            .content {
-                width: 66%;
-                padding: 2%;
 
-                p {
-                    font-size: 14px;
-                }
-
-            }
-
-            .author-info {
-                display: flex;
-                justify-content: flex-end;
-                flex-direction: row;
-                align-items: start;
-
-                .name {
-                    font-weight: bold;
-                    color: $color-black;
-                    padding-right: 5px;
-                }
-
-                .job {
-                    color: $color-gray;
-                }
-            }
         }
 
 
