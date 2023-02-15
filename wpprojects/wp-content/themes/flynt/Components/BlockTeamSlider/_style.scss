@@ -13,6 +13,14 @@
             transform: translate3d(0px, 0px, 0px);
         }
 
+        .even {
+            margin-top: 80px;
+        }
+
+        .odd {
+            margin-bottom: 80px;
+        }
+
         .swiper-slide {
             display: flex;
             flex-direction: row;
