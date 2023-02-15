@@ -55,7 +55,7 @@ add_action('Flynt/afterRegisterComponents', function () {
             [
                 'label' => __('Linkedin', 'flynt'),
                 'name' => 'linkedin',
-                'type' => 'link',
+                'type' => 'text',
                 'required' => 0,
             ],
         ],
