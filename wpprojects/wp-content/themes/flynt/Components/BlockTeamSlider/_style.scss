@@ -44,6 +44,11 @@
                         position: relative;
                         top: 0px;
                         left: -40px;
+                        pointer-events: none;
+                    }
+
+                    &:hover .icons {
+                        z-index: 10;
                     }
                 }
 
