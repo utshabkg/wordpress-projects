@@ -37,6 +37,16 @@
                 flex-direction: column;
                 justify-content: start;
 
+                .author-image {
+
+                    &:hover img {
+                        transform: all 0.10s linear;
+                        position: relative;
+                        top: 0px;
+                        left: -40px;
+                    }
+                }
+
                 .icons {
                     position: absolute;
                     top: 40px;
@@ -64,12 +74,6 @@
                         width: 100%;
                         border-bottom-left-radius: 80px;
 
-                        &:hover {
-                            transform: all 0.10s linear;
-                            position: relative;
-                            top: 0px;
-                            left: -40px;
-                        }
                     }
                 }
 
