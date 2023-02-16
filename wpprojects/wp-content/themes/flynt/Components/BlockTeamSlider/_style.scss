@@ -10,16 +10,15 @@
         overflow: hidden;
 
         .swiper-wrapper {
-            transform: translate3d(0px, 0px, 0px);
 
             .even {
                 margin-top: 80px;
-                transition: 3s;
+                transition: 2s;
             }
 
             .odd {
                 margin-bottom: 80px;
-                transition: 3s;
+                transition: 2s;
             }
 
             &:hover .even {
@@ -51,16 +50,26 @@
 
                 .author-image {
 
-                    &:hover img {
-                        transform: all 0.10s linear;
+                    .image {
+                        display: block;
+                        border-bottom-left-radius: 80px 80px;
+                        position: relative;
+                        min-height: 300px;
+                        top: 0px;
+                        left: 0px;
+                        z-index: 5;
+                        transition: 1s;
+
+                        img {
+                            width: 100%;
+                            border-bottom-left-radius: 80px;
+                        }
+                    }
+
+                    &:hover .image {
                         position: relative;
                         top: 0px;
                         left: -40px;
-                        pointer-events: none;
-                    }
-
-                    &:hover .icons {
-                        z-index: 10;
                     }
                 }
 
@@ -77,22 +86,6 @@
                     }
                 }
 
-                .image {
-                    display: block;
-                    border-bottom-left-radius: 80px 80px;
-                    position: relative;
-                    min-height: 300px;
-                    top: 0px;
-                    left: 0px;
-                    transform: all 0.10s;
-                    z-index: 5;
-
-                    img {
-                        width: 100%;
-                        border-bottom-left-radius: 80px;
-
-                    }
-                }
 
                 .info {
                     display: block;
