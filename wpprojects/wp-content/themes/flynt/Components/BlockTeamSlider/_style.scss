@@ -11,26 +11,26 @@
 
         .swiper-wrapper {
             transform: translate3d(0px, 0px, 0px);
-        }
 
-        .even {
-            margin-top: 80px;
-            transition: 3s;
-        }
+            .even {
+                margin-top: 80px;
+                transition: 3s;
+            }
 
-        .odd {
-            margin-bottom: 80px;
-            transition: 3s;
-        }
+            .odd {
+                margin-bottom: 80px;
+                transition: 3s;
+            }
 
-        &:hover .even {
-            margin-top: 0px;
-            margin-bottom: 80px;
-        }
+            &:hover .even {
+                margin-top: 0px;
+                margin-bottom: 80px;
+            }
 
-        &:hover .odd {
-            margin-top: 80px;
-            margin-bottom: 0px;
+            &:hover .odd {
+                margin-top: 80px;
+                margin-bottom: 0px;
+            }
         }
 
         .swiper-slide {
