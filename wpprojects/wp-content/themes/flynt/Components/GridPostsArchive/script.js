@@ -1,12 +1,15 @@
 /* eslint-disable comma-dangle */
 import $ from 'jquery'
+import jqueryBridget from 'jquery-bridget'
+import infiniteScroll from 'infinite-scroll'
 
+jqueryBridget('infiniteScroll', infiniteScroll, $)
 // init Infinite Scroll
 $('.posts').infiniteScroll({
   path: '.pageloadMore',
   append: '.post',
   // status: '.scroller-status',
-  // hideNav: '.pagination-loadMore a'
+  hideNav: '.pagination-loadMore a'
 })
 
 class GridPostsArchive extends window.HTMLDivElement {
