@@ -12,25 +12,29 @@
 
     .img__description_layer {
       position: absolute;
-      bottom: 0;
-      left: 100%;
-      right: 0;
-      background: rgba(255, 255, 255, 0.6);
       display: flex;
-      visibility: hidden;
       width: 0;
       height: 100%;
-      transition: .5s;
+      right: 0;
+      background: rgba(141, 135, 135, 0.6);
+      transition: 1s;
+      visibility: hidden;
+      overflow: hidden;
 
       .hoverText {
         align-items: center;
         justify-content: center;
         top: 50%;
         left: 50%;
+
+        .img__wrap-title,
+        .img__wrap-excerpt {
+          font-size: large;
+        }
       }
     }
 
-    &:hover .img__description_layer {
+    &:hover>.img__description_layer {
       width: 60%;
       height: 100%;
       left: 60;
