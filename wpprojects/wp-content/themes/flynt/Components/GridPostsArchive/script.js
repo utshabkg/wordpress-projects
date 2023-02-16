@@ -1,33 +1,42 @@
+/* eslint-disable comma-dangle */
 import $ from 'jquery'
 
+// init Infinite Scroll
+$('.posts').infiniteScroll({
+  path: '.pageloadMore',
+  append: '.post',
+  // status: '.scroller-status',
+  // hideNav: '.pagination-loadMore a'
+})
+
 class GridPostsArchive extends window.HTMLDivElement {
-  constructor (...args) {
+  constructor(...args) {
     const self = super(...args)
     self.init()
     return self
   }
 
-  init () {
+  init() {
     this.$ = $(this)
     this.resolveElements()
     this.bindFunctions()
     this.bindEvents()
   }
 
-  resolveElements () {
+  resolveElements() {
     this.$posts = $('.posts', this)
     this.$pagination = $('.pagination', this)
   }
 
-  bindFunctions () {
+  bindFunctions() {
     this.onLoadMore = this.onLoadMore.bind(this)
   }
 
-  bindEvents () {
+  bindEvents() {
     this.$.on('click', '[data-action="loadMore"]', this.onLoadMore)
   }
 
-  onLoadMore (e) {
+  onLoadMore(e) {
     e.preventDefault()
 
     const $target = $(e.currentTarget).addClass('button--disabled')
