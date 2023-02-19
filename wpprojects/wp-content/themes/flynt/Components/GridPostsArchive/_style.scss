@@ -6,13 +6,6 @@
     grid-template-columns: 0.3fr 0.2fr 0.2fr 0.3fr;
 
     .post {
-      // @media (min-width: $breakpoint-tablet) {
-      //   @include grid(2);
-      // }
-
-      // @media (min-width: $breakpoint-tablet-horizontal) {
-      //   @include grid(3);
-      // }
       margin: 10px; //$gutter-width;
       overflow: hidden;
       border-style: solid;
