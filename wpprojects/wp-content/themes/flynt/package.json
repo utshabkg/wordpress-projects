@@ -172,7 +172,8 @@
     "infinite-scroll": "^4.0.1",
     "isotope-layout": "^3.0.6",
     "jquery-bridget": "^3.0.1",
-    "masonry-layout": "^4.2.2"
+    "masonry-layout": "^4.2.2",
+    "packery": "^2.1.2"
   },
   "browserslist": [
     "> 1%",

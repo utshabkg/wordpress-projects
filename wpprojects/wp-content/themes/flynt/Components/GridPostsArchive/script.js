@@ -2,15 +2,46 @@
 import $ from 'jquery'
 import jqueryBridget from 'jquery-bridget'
 import infiniteScroll from 'infinite-scroll'
+import Masonry from 'masonry-layout'
+import Packery from 'packery'
 
+// Infinite Scroll
 jqueryBridget('infiniteScroll', infiniteScroll, $)
-// init Infinite Scroll
 $('.posts').infiniteScroll({
   path: '.pageloadMore',
   append: '.post',
   // status: '.scroller-status',
   hideNav: '.pagination-loadMore a'
 })
+
+// Masonry Grid
+// jqueryBridget('Masonry', Masonry, $)
+// $('.posts').Masonry({
+//   // options
+//   itemSelector: '.post',
+//   // use element for option
+//   columnWidth: '.post',
+//   percentPosition: true
+// })
+// init Masonry
+// var $grid = $('.posts').Masonry({
+//   itemSelector: '.post',
+//   percentPosition: true,
+//   columnWidth: 200,
+// })
+
+// layout Masonry after each image loads
+// $grid.imagesLoaded().progress(function () {
+//   $grid.Masonry()
+// })
+
+// Packery: Gapless Draggables
+// jqueryBridget('Packery', Packery, $)
+// $('.posts').Packery({
+//   // options
+//   itemSelector: '.post',
+//   gutter: 10
+// })
 
 class GridPostsArchive extends window.HTMLDivElement {
   constructor(...args) {
@@ -40,29 +71,29 @@ class GridPostsArchive extends window.HTMLDivElement {
   }
 
   onLoadMore(e) {
-    e.preventDefault()
+    // e.preventDefault()
 
-    const $target = $(e.currentTarget).addClass('button--disabled')
+    // const $target = $(e.currentTarget).addClass('button--disabled')
 
-    const url = new URL(e.currentTarget.href)
-    url.searchParams.append('contentOnly', 1)
+    // const url = new URL(e.currentTarget.href)
+    // url.searchParams.append('contentOnly', 1)
 
-    $.ajax({
-      url: url
-    }).then(
-      response => {
-        const $html = $(response)
-        const $posts = $('.posts', $html)
-        const $pagination = $('.pagination', $html)
+    // $.ajax({
+    //   url: url
+    // }).then(
+    //   response => {
+    //     const $html = $(response)
+    //     const $posts = $('.posts', $html)
+    //     const $pagination = $('.pagination', $html)
 
-        this.$posts.append($posts.html())
-        this.$pagination.html($pagination.html() || '')
-      },
-      response => {
-        console.error(response)
-        $target.removeClass('button--disabled')
-      }
-    )
+    //     this.$posts.append($posts.html())
+    //     this.$pagination.html($pagination.html() || '')
+    //   },
+    //   response => {
+    //     console.error(response)
+    //     $target.removeClass('button--disabled')
+    //   }
+    // )
   }
 }
 

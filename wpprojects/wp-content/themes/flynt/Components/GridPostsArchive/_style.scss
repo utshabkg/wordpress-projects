@@ -1,6 +1,96 @@
 [is='flynt-grid-posts-archive'] {
   .posts {
     @include reset-list;
+    position: relative;
+    display: grid;
+    grid-template-columns: 0.3fr 0.2fr 0.2fr 0.3fr;
+
+    .post {
+      // @media (min-width: $breakpoint-tablet) {
+      //   @include grid(2);
+      // }
+
+      // @media (min-width: $breakpoint-tablet-horizontal) {
+      //   @include grid(3);
+      // }
+      margin: 10px; //$gutter-width;
+      overflow: hidden;
+      border-style: solid;
+      border-color: rgb(31, 194, 140);
+
+      &-link {
+        display: block;
+        text-decoration: none;
+      }
+
+      .figure {
+        background-color: $color-text;
+        margin-bottom: 0;
+      }
+
+      &-inner {
+        @include reset-content-margins;
+        padding: $gutter-width 0;
+      }
+
+      &-excerpt {
+        margin-bottom: 0.75rem;
+      }
+    }
+
+    .post--1 {
+      grid-column: 1 / 3; // Start with 1, end with 3
+      grid-row: 1 / 3;
+      height: 300px;
+    }
+
+    .post--2 {
+      grid-column: 3 / 5;
+      grid-row-start: 1 / 3;
+      height: 300px;
+    }
+
+    .post--3 {
+      grid-column: 1 / 5;
+      grid-row: 3 / 5;
+      height: 150px;
+    }
+
+    .post--4 {
+      grid-column: 1 / 5;
+      grid-row: 5 / 8;
+      height: 300px;
+    }
+
+    .post--5 {
+      grid-column: 1 / 4;
+      grid-row: 8 / 10;
+      height: 300px;
+    }
+
+    .post--6 {
+      grid-column: 4 / 5;
+      grid-row: 8 / 12;
+      height: 470px;
+    }
+
+    .post--7 {
+      grid-column: 1 / 2;
+      grid-row: 10 / 16;
+      height: 670px;
+    }
+
+    .post--8 {
+      grid-column: 2 / 4;
+      grid-row: 10 / 12;
+      height: 150px;
+    }
+
+    .post--9 {
+      grid-column: 2 / 5;
+      grid-row: 12 / 16;
+      height: 500px;
+    }
   }
 
   .img__wrap {
@@ -8,8 +98,8 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 283px;
-    width: 424px;
+    height: 100%;
+    width: 100%;
 
     .img__description_layer {
       position: absolute;
@@ -100,45 +190,8 @@
     }
   }
 
-  .posts {
-    @media (min-width: $breakpoint-tablet) {
-      @include grid(2);
-    }
-
-    @media (min-width: $breakpoint-tablet-horizontal) {
-      @include grid(3);
-    }
-  }
-
   .posts-empty {
     padding: 40px 0 0;
-  }
-
-  .post {
-    margin-bottom: $gutter-width;
-
-    @media (min-width: $breakpoint-tablet) {
-      margin-bottom: 0;
-    }
-
-    &-link {
-      display: block;
-      text-decoration: none;
-    }
-
-    .figure {
-      background-color: $color-text;
-      margin-bottom: 0;
-    }
-
-    &-inner {
-      @include reset-content-margins;
-      padding: $gutter-width 0;
-    }
-
-    &-excerpt {
-      margin-bottom: 0.75rem;
-    }
   }
 
   @import 'Partials/filter';
