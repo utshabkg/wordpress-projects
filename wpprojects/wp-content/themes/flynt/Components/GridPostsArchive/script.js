@@ -4,6 +4,7 @@ import jqueryBridget from 'jquery-bridget'
 import infiniteScroll from 'infinite-scroll'
 import Masonry from 'masonry-layout'
 import Packery from 'packery'
+import imagesLoaded from 'imagesloaded'
 
 // Infinite Scroll
 jqueryBridget('infiniteScroll', infiniteScroll, $)
@@ -11,11 +12,15 @@ $('.posts').infiniteScroll({
   path: '.pageloadMore',
   append: '.post',
   // status: '.scroller-status',
-  hideNav: '.pagination-loadMore a'
+  hideNav: '.pagination-loadMore a',
+  // loading: {
+  //   finishedMsg: 'No more pages to load.',
+  //   img: 'http://i.imgur.com/6RMhx.gif'
+  // }
 })
 
 // Masonry Grid
-// jqueryBridget('Masonry', Masonry, $)
+jqueryBridget('Masonry', Masonry, $)
 // $('.posts').Masonry({
 //   // options
 //   itemSelector: '.post',
@@ -23,16 +28,28 @@ $('.posts').infiniteScroll({
 //   columnWidth: '.post',
 //   percentPosition: true
 // })
+
 // init Masonry
 // var $grid = $('.posts').Masonry({
 //   itemSelector: '.post',
 //   percentPosition: true,
-//   columnWidth: 200,
+//   columnWidth: '.post',
 // })
-
 // layout Masonry after each image loads
+jqueryBridget('imagesLoaded', imagesLoaded, $)
 // $grid.imagesLoaded().progress(function () {
 //   $grid.Masonry()
+// })
+
+// var grid = document.querySelector('.posts')
+// var msnry = new Masonry(grid, {
+//   itemSelector: '.post',
+//   columnWidth: '.post',
+//   percentPosition: true
+// })
+// imagesLoaded(grid).on('progress', function () {
+//   // layout Masonry after each image loads
+//   msnry.layout()
 // })
 
 // Packery: Gapless Draggables

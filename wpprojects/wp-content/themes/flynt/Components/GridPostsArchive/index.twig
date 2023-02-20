@@ -14,17 +14,9 @@
 				<li class="post post--{{ numbering }}">
 					{% set numbering = numbering + 1 %}
 					<div class="img__wrap boxShadow themeReset">
-						{% if post.thumbnail.src %}
-							<img class="img__wrap-image lazyload" src="{{ post.thumbnail.src | resizeDynamic(424, 283) }}" srcset="{{ placeholderImage(400, 400) }}" data-srcset="
-								{{ post.thumbnail.src|resizeDynamic(1920, 1280) }} 1920w,
-								{{ post.thumbnail.src|resizeDynamic(1320, 880) }} 1320w,
-								{{ post.thumbnail.src|resizeDynamic(1280, 853) }} 1280w,
-								{{ post.thumbnail.src|resizeDynamic(1050, 700) }} 1050w,
-								{{ post.thumbnail.src|resizeDynamic(750, 500) }} 750w,
-								{{ post.thumbnail.src|resizeDynamic(600, 400) }} 600w,
-								{{ post.thumbnail.src|resizeDynamic(424, 283) }} 424w,
-								{{ post.thumbnail.src|resizeDynamic(312, 208) }} 312w" data-sizes="auto" alt="{{ post.thumbnail.alt|e }}">
-						{% endif %}
+
+						<img class="img__wrap-image" src="{{ post.thumbnail.src | resizeDynamic(424, 283) }}" onerror="this.src='';this.src='https://dummyimage.com/600x400/000/fff';">
+
 						<div class="img__description_layer">
 							<div class="hoverText">
 								<a href="{{ post.link }}" class="img__wrap-link" title="{{ post.title }}" target="_blank">
