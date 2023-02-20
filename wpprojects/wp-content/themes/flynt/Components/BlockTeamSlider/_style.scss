@@ -3,6 +3,35 @@
     flex-direction: column;
     justify-content: center;
 
+
+    .sb-next,
+    .sb-prev {
+        cursor: pointer;
+
+        position: relative;
+
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        background-image: url('icons/arrow-left.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 16px;
+
+        width: 50px;
+        height: 50px;
+
+        transition: opacity .5s ease 0s,
+            transform .5s ease 0s;
+        will-change: opacity, transform;
+
+        margin: 0 5px;
+    }
+
+    .sb-prev {
+        background-image: url('icons/arrow-right.svg');
+    }
+
     .swiper {
         width: 90%;
         height: auto;
@@ -109,7 +138,6 @@
 
         }
 
-
         .swiper-navigation {
             display: flex;
             flex-direction: row;
@@ -146,34 +174,6 @@
                         opacity: 1;
                     }
                 }
-            }
-
-            .sb-next,
-            .sb-prev {
-                cursor: pointer;
-
-                position: relative;
-
-                display: inline-flex;
-                flex-direction: column;
-                justify-content: center;
-                background-image: url('icons/arrow-left.svg');
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: 16px;
-
-                width: 50px;
-                height: 50px;
-
-                transition: opacity .5s ease 0s,
-                    transform .5s ease 0s;
-                will-change: opacity, transform;
-
-                margin: 0 5px;
-            }
-
-            .sb-prev {
-                background-image: url('icons/arrow-right.svg');
             }
         }
     }
