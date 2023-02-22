@@ -6,34 +6,34 @@ import 'swiper/swiper-bundle.css'
 Swiper.use([Navigation, Pagination, A11y, Autoplay])
 
 class BlockTeamSlider extends window.HTMLDivElement {
-  constructor (...args) {
+  constructor(...args) {
     const self = super(...args)
     self.init()
     return self
   }
 
-  init () {
+  init() {
     this.$ = $(this)
     this.props = this.getInitialProps()
     this.resolveElements()
   }
 
-  getInitialProps () {
+  getInitialProps() {
     let data = {}
     try {
       data = JSON.parse($('script[type="application/json"]', this).text())
-    } catch (e) {}
+    } catch (e) { }
     return data
   }
 
-  resolveElements () {
+  resolveElements() {
     this.$slider = $('[data-slider]', this)
     this.$buttonNext = $('[data-slider-button="next"]', this)
     this.$buttonPrev = $('[data-slider-button="prev"]', this)
     this.$pagination = $('[data-slider-pagination]', this)
   }
 
-  connectedCallback () {
+  connectedCallback() {
     this.initSlider()
   }
 
@@ -54,13 +54,17 @@ class BlockTeamSlider extends window.HTMLDivElement {
         1024: {
           slidesPerView: 4,
           spaceBetween: 50
+        },
+        480: {
+          slidesPerView: 2,
+          spaceBetween: 30
         }
       },
       pagination: {
         el: ".s-pagination",
         clickable: true,
       },
-      
+
     }
 
     if (options.autoplay && options.autoplaySpeed) {
@@ -69,7 +73,7 @@ class BlockTeamSlider extends window.HTMLDivElement {
       }
     }
 
-    this.slider = new Swiper( this.$slider.get(0), config )
+    this.slider = new Swiper(this.$slider.get(0), config)
   }
 }
 
