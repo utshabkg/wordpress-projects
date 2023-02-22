@@ -4,18 +4,14 @@
     justify-content: center;
 
     .container {
-        @media (max-width: $breakpoint-mobile-horizontal) {
+        @media (max-width: $breakpoint-tablet-horizontal) {
             width: 100%;
         }
 
         .section-title {
             h2 {
-                @media (max-width: $breakpoint-mobile-horizontal) {
+                @media (max-width: $breakpoint-tablet-horizontal) {
                     font-size: xx-large;
-                }
-
-                @media (max-width: $breakpoint-tablet) {
-                    font-size: large;
                 }
             }
 
@@ -51,7 +47,7 @@
 
             margin: 0 5px;
 
-            @media (max-width: $breakpoint-mobile-horizontal) {
+            @media (max-width: $breakpoint-tablet-horizontal) {
                 visibility: hidden;
             }
         }
@@ -127,7 +123,7 @@
                 .author-image {
                     height: 70%;
 
-                    @media (max-width: $breakpoint-mobile-horizontal) {
+                    @media (max-width: $breakpoint-tablet-horizontal) {
                         height: 75%;
                     }
 
@@ -171,12 +167,12 @@
                     .fab {
                         padding: 5px 0;
 
-                        @media (max-width: $breakpoint-mobile-horizontal) {
+                        @media (max-width: $breakpoint-tablet-horizontal) {
                             padding: 0px 5px 0px 0px;
                         }
                     }
 
-                    @media (max-width: $breakpoint-mobile-horizontal) {
+                    @media (max-width: $breakpoint-tablet-horizontal) {
                         flex-direction: row;
                         top: 555px;
                         left: 10px;
