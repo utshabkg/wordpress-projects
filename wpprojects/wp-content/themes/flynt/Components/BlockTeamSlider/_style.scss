@@ -3,43 +3,26 @@
     flex-direction: column;
     justify-content: center;
 
+    .container {
+        @media (max-width: $breakpoint-mobile-horizontal) {
+            width: 100%;
+        }
 
-    .sb-next,
-    .sb-prev {
-        cursor: pointer;
-        position: absolute;
-        bottom: 50%;
-        right: 0%;
-        z-index: 20;
+        .section-title {
+            h2 {
+                @media (max-width: $breakpoint-mobile-horizontal) {
+                    font-size: xx-large;
+                }
 
-        display: inline-flex;
-        flex-direction: column;
-        justify-content: center;
-        background-image: url('icons/arrow-left.svg');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 16px;
-
-        width: 50px;
-        height: 50px;
-
-        transition: opacity .5s ease 0s,
-            transform .5s ease 0s;
-        will-change: opacity, transform;
-
-        margin: 0 5px;
-    }
-
-    .sb-prev {
-        background-image: url('icons/arrow-right.svg');
-        position: absolute;
-        bottom: 50%;
-        z-index: 20;
-        left: 0%;
+                // @media (max-width: $breakpoint-tablet-horizontal) {
+                //     font-size: large;
+                // }
+            }
+        }
     }
 
     .swiper {
-        width: 90%;
+        width: 100%;
         height: auto;
         padding: 10vh 0;
         overflow: hidden;
@@ -47,23 +30,31 @@
         .swiper-wrapper {
 
             .even {
-                margin-top: 80px;
-                transition: 2s;
+                @media (min-width: $breakpoint-tablet-horizontal) {
+                    margin-top: 80px;
+                    transition: 2s;
+                }
             }
 
             .odd {
-                margin-bottom: 80px;
-                transition: 2s;
+                @media (min-width: $breakpoint-tablet-horizontal) {
+                    margin-bottom: 80px;
+                    transition: 2s;
+                }
             }
 
             &:hover .even {
-                margin-top: 0px;
-                margin-bottom: 80px;
+                @media (min-width: $breakpoint-tablet-horizontal) {
+                    margin-top: 0px;
+                    margin-bottom: 80px;
+                }
             }
 
             &:hover .odd {
-                margin-top: 80px;
-                margin-bottom: 0px;
+                @media (min-width: $breakpoint-tablet-horizontal) {
+                    margin-top: 80px;
+                    margin-bottom: 0px;
+                }
             }
         }
 
@@ -102,9 +93,11 @@
                     }
 
                     &:hover .image {
-                        position: relative;
-                        top: 0px;
-                        left: -40px;
+                        @media (min-width: $breakpoint-tablet-horizontal) {
+                            position: relative;
+                            top: 0px;
+                            left: -40px;
+                        }
                     }
                 }
 
@@ -118,6 +111,11 @@
 
                     .fab {
                         padding: 5px 0;
+                    }
+
+                    @media (max-width: $breakpoint-mobile-horizontal) {
+                        z-index: 20;
+                        margin-top: 100%;
                     }
                 }
 
@@ -182,5 +180,40 @@
                 }
             }
         }
+    }
+
+    .sb-next,
+    .sb-prev {
+        cursor: pointer;
+        position: absolute;
+        bottom: 50%;
+        right: 0%;
+        z-index: 20;
+
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        background-image: url('icons/arrow-left.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 16px;
+
+        width: 50px;
+        height: 50px;
+
+        transition: opacity .5s ease 0s,
+            transform .5s ease 0s;
+        will-change: opacity, transform;
+
+        margin: 0 5px;
+
+        @media (max-width: $breakpoint-mobile-horizontal) {
+            visibility: hidden;
+        }
+    }
+
+    .sb-prev {
+        background-image: url('icons/arrow-right.svg');
+        left: 0%;
     }
 }
