@@ -7,8 +7,10 @@
     .sb-next,
     .sb-prev {
         cursor: pointer;
-
-        position: relative;
+        position: absolute;
+        bottom: 50%;
+        right: 0%;
+        z-index: 20;
 
         display: inline-flex;
         flex-direction: column;
@@ -30,6 +32,10 @@
 
     .sb-prev {
         background-image: url('icons/arrow-right.svg');
+        position: absolute;
+        bottom: 50%;
+        z-index: 20;
+        left: 0%;
     }
 
     .swiper {
