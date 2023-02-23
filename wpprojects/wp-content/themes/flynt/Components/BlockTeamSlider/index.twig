@@ -12,9 +12,6 @@
 				<div class="content">{{ contentHtml }}</div>
 			{% endif %}
 		</div>
-
-		<button data-slider-button="prev" class="swiper-button sb-prev"></button>
-		<button data-slider-button="next" class="swiper-button sb-next"></button>
 		<div data-slider="data-slider" class="swiper">
 			<div class="swiper-wrapper">
 				{% set i = 1 %}
@@ -50,11 +47,8 @@
 						{% endfor %}
 					{% endif %}
 				</div>
-				{# <div class="swiper-navigation">
-													<button data-slider-button="prev" class="swiper-button sb-prev"></button>
-													<div class="s-pagination"></div>
-													<button data-slider-button="next" class="swiper-button sb-next"></button>
-												</div> #}
 			</div>
+			<button data-slider-button="prev" class="swiper-button sb-prev"></button>
+			<button data-slider-button="next" class="swiper-button sb-next"></button>
 		</div>
 	</div>
