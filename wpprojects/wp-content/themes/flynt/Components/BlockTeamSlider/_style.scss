@@ -27,13 +27,11 @@
             cursor: pointer;
             position: relative;
             top: 250px;
-            right: 50px;
             z-index: 20;
 
             display: inline-flex;
             flex-direction: column;
             justify-content: center;
-            background-image: url('icons/arrow-left.svg');
             background-repeat: no-repeat;
             background-position: center;
             background-size: 16px;
@@ -45,16 +43,21 @@
                 transform .5s ease 0s;
             will-change: opacity, transform;
 
-            margin: 0 5px;
-
-            @media (max-width: $breakpoint-tablet-horizontal) {
+            @media (max-width: $breakpoint-mobile-horizontal) {
                 visibility: hidden;
             }
         }
 
         .sb-prev {
             background-image: url('icons/arrow-right.svg');
-            left: 50px;
+            float: left;
+            right: 60px;
+        }
+
+        .sb-next {
+            background-image: url('icons/arrow-left.svg');
+            float: right;
+            left: 60px;
         }
     }
 
