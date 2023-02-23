@@ -55,7 +55,6 @@
     }
 
     .swiper {
-        width: 100%;
         height: auto;
         overflow: hidden;
         position: relative;
@@ -95,7 +94,7 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            align-items: stretch;
+            
             background-color: $off-black;
             box-shadow: 0px 0px 15px $peach;
             height: 500px;
