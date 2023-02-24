@@ -31,9 +31,10 @@
             position: absolute;
             z-index: 20;
             background-repeat: no-repeat;
-
-            width: 50px;
-            height: 50px;
+            background-color: white;
+            opacity: 60%;
+            font-size: 200%;
+            color: $off-black;
 
             transition: opacity .5s ease 0s,
                 transform .5s ease 0s;
@@ -44,13 +45,13 @@
             }
         }
 
-        .sb-prev {
-            background-image: url('icons/arrow-right.svg');
-            left: 0;
-        }
+        // .sb-prev {
+            // background-image: url('icons/arrow-right.svg');
+            // left: 20px;
+        // }
 
         .sb-next {
-            background-image: url('icons/arrow-left.svg');
+            // background-image: url('icons/arrow-left.svg');
             right: 0;
         }
     }
@@ -61,6 +62,7 @@
         position: relative;
 
         .swiper-wrapper {
+            position: relative;
             .even, .odd{
                 @media (min-width: $breakpoint-tablet-horizontal) {
                     margin-top: 40px;
@@ -186,47 +188,6 @@
 
                     .job {
                         color: $citrus;
-                    }
-                }
-            }
-
-
-        }
-
-        .swiper-navigation {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            width: 100%;
-            height: auto;
-            padding: 40px 20px;
-
-            .s-pagination {
-                display: inline-flex;
-                flex-direction: row;
-                justify-content: center;
-
-                width: auto;
-                height: auto;
-                padding: 0 20px;
-
-                .swiper-pagination-bullet {
-                    background-color: $color-green;
-                    border: 1px solid $color-green;
-                    width: 15px;
-                    height: 15px;
-                    margin: 16px 10px;
-                    transform: scale(1);
-                    opacity: 1;
-
-                    transition: background-color .5s ease 0s,
-                        transform .5s ease 0s;
-                    will-change: background-color, transform;
-
-                    &.swiper-pagination-bullet-active {
-                        background-color: $color-dark-green;
-                        transform: scale(1);
-                        opacity: 1;
                     }
                 }
             }
