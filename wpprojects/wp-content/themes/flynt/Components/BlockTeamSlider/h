@@ -57,10 +57,14 @@
 
     .swiper {
         height: auto;
+        width: 100%;
         overflow: hidden;
-        position: relative;
 
         .swiper-wrapper {
+            max-height: 100%;
+            height: 100%;
+            display: flex;
+
             .even {
                 @media (min-width: $breakpoint-tablet-horizontal) {
                     margin-top: 80px;
@@ -91,13 +95,10 @@
         }
 
         .swiper-slide {
-            // display: flex;
-            // flex-direction: row;
-            // justify-content: space-between;
             width: auto;
-            // flex-shrink: 0;
-            // display: block;
-            // max-height: 100%;
+            flex-shrink: 0;
+            display: block;
+            max-height: 100%;
 
             background-color: $off-black;
             box-shadow: 0px 0px 15px $peach;
@@ -195,47 +196,6 @@
 
                     .job {
                         color: $citrus;
-                    }
-                }
-            }
-
-
-        }
-
-        .swiper-navigation {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            width: 100%;
-            height: auto;
-            padding: 40px 20px;
-
-            .s-pagination {
-                display: inline-flex;
-                flex-direction: row;
-                justify-content: center;
-
-                width: auto;
-                height: auto;
-                padding: 0 20px;
-
-                .swiper-pagination-bullet {
-                    background-color: $color-green;
-                    border: 1px solid $color-green;
-                    width: 15px;
-                    height: 15px;
-                    margin: 16px 10px;
-                    transform: scale(1);
-                    opacity: 1;
-
-                    transition: background-color .5s ease 0s,
-                        transform .5s ease 0s;
-                    will-change: background-color, transform;
-
-                    &.swiper-pagination-bullet-active {
-                        background-color: $color-dark-green;
-                        transform: scale(1);
-                        opacity: 1;
                     }
                 }
             }
