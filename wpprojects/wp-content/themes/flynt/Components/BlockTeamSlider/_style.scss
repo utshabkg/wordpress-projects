@@ -45,13 +45,7 @@
             }
         }
 
-        // .sb-prev {
-            // background-image: url('icons/arrow-right.svg');
-            // left: 20px;
-        // }
-
         .sb-next {
-            // background-image: url('icons/arrow-left.svg');
             right: 0;
         }
     }
@@ -63,7 +57,9 @@
 
         .swiper-wrapper {
             position: relative;
-            .even, .odd{
+
+            .even,
+            .odd {
                 @media (min-width: $breakpoint-tablet-horizontal) {
                     margin-top: 40px;
                     transition: 2s;
@@ -84,14 +80,7 @@
         }
 
         .swiper-slide {
-            // display: flex;
-            // flex-direction: row;
-            // justify-content: space-between;
-            width: auto;
-            // flex-shrink: 0;
-            // display: block;
-            // max-height: 100%;
-
+            width: 25%;
             background-color: $off-black;
             box-shadow: 0px 0px 15px $peach;
             height: 500px;
