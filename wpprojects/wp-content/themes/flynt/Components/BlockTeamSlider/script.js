@@ -49,7 +49,7 @@ class BlockTeamSlider extends window.HTMLDivElement {
         prevEl: this.$buttonPrev.get(0)
       },
       slidesPerView: 1,
-      spaceBetween: 0,
+      spaceBetween: 50,
       breakpoints: {
         1024: {
           slidesPerView: 4,
@@ -61,10 +61,9 @@ class BlockTeamSlider extends window.HTMLDivElement {
         }
       },
       pagination: {
-        el: ".s-pagination",
-        clickable: true,
-      },
-
+        el: '.s-pagination',
+        clickable: true
+      }
     }
 
     if (options.autoplay && options.autoplaySpeed) {
