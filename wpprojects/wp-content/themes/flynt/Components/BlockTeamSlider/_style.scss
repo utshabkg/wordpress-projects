@@ -61,31 +61,22 @@
         position: relative;
 
         .swiper-wrapper {
-            .even {
+            .even, .odd{
                 @media (min-width: $breakpoint-tablet-horizontal) {
-                    margin-top: 80px;
-                    transition: 2s;
-                }
-            }
-
-            .odd {
-                @media (min-width: $breakpoint-tablet-horizontal) {
-                    margin-bottom: 80px;
+                    margin-top: 40px;
                     transition: 2s;
                 }
             }
 
             &:hover .even {
                 @media (min-width: $breakpoint-tablet-horizontal) {
-                    margin-top: 0px;
-                    margin-bottom: 80px;
+                    margin-top: 80px;
                 }
             }
 
             &:hover .odd {
                 @media (min-width: $breakpoint-tablet-horizontal) {
-                    margin-top: 80px;
-                    margin-bottom: 0px;
+                    margin-top: 0px;
                 }
             }
         }
